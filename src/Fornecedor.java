@@ -1,18 +1,28 @@
 
 public class Fornecedor {
-	
-	private Integer numero;
+	private Integer id;
 	private String razaoSocial;
 	private String nomeFantasia;
-	private Integer tel;
+	private String telefone;
 	private String email;
 	private Endereco endereco;
 	
-	public Integer getNumero() {
-		return numero;
+	public Fornecedor() {};
+	public Fornecedor(Integer id, String razaoSocial, String nomeFantasia, String telefone, String email,
+			Endereco endereco) {
+		super();
+		this.id = id;
+		this.razaoSocial = razaoSocial;
+		this.nomeFantasia = nomeFantasia;
+		this.telefone = telefone;
+		this.email = email;
+		this.endereco = endereco;
 	}
-	public void setNumero(Integer numero) {
-		this.numero = numero;
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getRazaoSocial() {
 		return razaoSocial;
@@ -26,11 +36,11 @@ public class Fornecedor {
 	public void setNomeFantasia(String nomeFantasia) {
 		this.nomeFantasia = nomeFantasia;
 	}
-	public Integer getTel() {
-		return tel;
+	public String getTelefone() {
+		return telefone;
 	}
-	public void setTel(Integer tel) {
-		this.tel = tel;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	public String getEmail() {
 		return email;
@@ -46,4 +56,5 @@ public class Fornecedor {
 	}
 	
 	
+
 }

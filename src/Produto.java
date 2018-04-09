@@ -1,17 +1,29 @@
 
 public class Produto {
-	
-	private Integer numero;
+	private Integer id;
 	private String nome;
 	private Double preco;
 	private Integer qtde;
-	private String fornecedor;
+	private Fornecedor fornecedor;
 	
-	public Integer getNumero() {
-		return numero;
+	public Produto() {
+		
+		
 	}
-	public void setNumero(Integer numero) {
-		this.numero = numero;
+	
+	public Produto(Integer id, String nome, Double preco, Integer qtde, Fornecedor fornecedor) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.preco = preco;
+		this.qtde = qtde;
+		this.fornecedor = fornecedor;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;
@@ -31,13 +43,12 @@ public class Produto {
 	public void setQtde(Integer qtde) {
 		this.qtde = qtde;
 	}
-	public String getFornecedor() {
+	public Fornecedor getFornecedor() {
 		return fornecedor;
 	}
-	public void setFornecedor(String fornecedor) {
+	public void setFornecedor(Fornecedor fornecedor) {
 		this.fornecedor = fornecedor;
 	}
-	
 	
 	
 	
