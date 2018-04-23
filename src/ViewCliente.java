@@ -1,7 +1,11 @@
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
@@ -25,60 +29,89 @@ private JTextField txtComplemento;
 private JTextField txtCep;
 private JTextField txtCpf;
 private JButton btnOk;
+private JButton btnAlterar;
+private JButton btnExcluir;
+private JButton btnLocalizar;
+
+private JPanel painelBotoes;
+private JPanel painelForm;
 
 public ViewCliente() {
 	super("Clientes");
-	setLayout(new FlowLayout());
+	setLayout(new BorderLayout());
+	
+//Vou criar um painel apenas para as labels e os campos do form
+//e os campos do formulário
+	
+	painelForm = new JPanel();
+	painelForm.setLayout(new GridLayout(7,2));
 	
 	lblId = new JLabel("Id:");
-	add(lblId);
+	painelForm.add(lblId);
 	
 	txtId = new JTextField(10);
-	add(txtId);
+	painelForm.add(txtId);
 	
 	lblNome = new JLabel("Nome:");
-	add(lblNome);
+	painelForm.add(lblNome);
 	
 	txtNome = new JTextField(10);
-	add(txtNome);
+	painelForm.add(txtNome);
 	
 	lblLogradouro = new JLabel("Rua:");
-	add(lblLogradouro);
+	painelForm.add(lblLogradouro);
 	
 	txtLogradouro = new JTextField(10);
-	add(txtLogradouro);
+	painelForm.add(txtLogradouro);
 	
 	lblNumero = new JLabel("Nº:");
-	add(lblNumero);
+	painelForm.add(lblNumero);
 	
 	txtNumero = new JTextField(10);
-	add(txtNumero);
+	painelForm.add(txtNumero);
 	
 	lblComplemento = new JLabel("Complemento:");
-	add(lblComplemento);
+	painelForm.add(lblComplemento);
 	
 	txtComplemento = new JTextField(10);
-	add(txtComplemento);
+	painelForm.add(txtComplemento);
 	
 	lblCep = new JLabel("CEP:");
-	add(lblCep);
+	painelForm.add(lblCep);
 	
 	txtCep = new JTextField(10);
-	add(txtCep);
+	painelForm.add(txtCep);
 	
 	lblef = new JLabel("CPF:");
-	add(lblef);
+	painelForm.add(lblef);
 	
 	txtCpf=new JTextField(10);
-	add(txtCpf);
+	painelForm.add(txtCpf);
+	
+	//Aqui vou criar um painel e colocar os botoes nele
+	painelBotoes = new JPanel();
+	painelBotoes.setLayout(new FlowLayout());
 	
 	btnOk = new JButton("Cadastrar");
-	add(btnOk);
-	
+	painelBotoes.add(btnOk);
 	btnOk.addActionListener(this);
 	
+	btnAlterar = new JButton("Alterar");
+	painelBotoes.add(btnAlterar);
+
+	btnLocalizar = new JButton("Localizar");
+	painelBotoes.add(btnLocalizar);
 	
-	}
+	btnExcluir = new JButton("Remover");
+	painelBotoes.add(btnExcluir);
+
+	//Agora vou incluir os dois paineis dentro da janela
+	add(painelForm, BorderLayout.CENTER);
+	add(painelBotoes, BorderLayout.SOUTH);
+	
+	
+	
+}
 
 
 public void actionPerformed(ActionEvent event) {
@@ -114,7 +147,7 @@ public void actionPerformed(ActionEvent event) {
 public static void main(String[] args) {
 	ViewCliente janelinha = new ViewCliente();
 	janelinha.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	janelinha.setSize(100,600);
+	janelinha.setSize(400,250);
 	janelinha.setVisible(true);
 			
 }
